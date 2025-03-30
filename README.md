@@ -45,7 +45,7 @@ E-Commerce-App/
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-repo/ecommerce-app.git
+   git clone https://github.com/Praneeth76/E-commerce.git
    cd ecommerce-app
    ```
 
@@ -68,7 +68,7 @@ E-Commerce-App/
    ```
 
 4. **Access the Application:**
-   - Frontend: `http://localhost:3000`
+   - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:5000`
    - Hosted Website: [Live Demo](https://your-vercel-app.vercel.app)
 

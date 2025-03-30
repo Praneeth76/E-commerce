@@ -17,7 +17,7 @@ function ManageUsers() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/users", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/users`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ function ManageUsers() {
   }, [token]);
 
   const handleDeleteUser = (id) => {
-    fetch(`http://localhost:5000/api/users/${id}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/users/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })

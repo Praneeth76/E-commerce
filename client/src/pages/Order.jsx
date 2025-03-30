@@ -15,7 +15,7 @@ function Orders() {
   }, []);
 
   const fetchOrders = () => {
-    fetch("http://localhost:5000/api/orders/myorders", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders/myorders`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ function Orders() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/reviews/${productId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/reviews/${productId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

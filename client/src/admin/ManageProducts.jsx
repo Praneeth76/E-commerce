@@ -17,7 +17,7 @@ function ManageProducts() {
 
   // Fetch products from API
   useEffect(() => {
-    fetch("http://localhost:5000/api/products", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -38,7 +38,7 @@ function ManageProducts() {
   // Submit new product
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/api/products", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ function ManageProducts() {
     const newStock = stockUpdates[productId];
     if (newStock === undefined || newStock === "") return;
 
-    fetch(`http://localhost:5000/api/products/${productId}/stock`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${productId}/stock`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ function ManageProducts() {
   };
 
   const deleteProduct = (productId) => {
-    fetch(`http://localhost:5000/api/products/${productId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${productId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

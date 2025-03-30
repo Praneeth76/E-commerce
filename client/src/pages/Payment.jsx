@@ -16,7 +16,7 @@ function Payment() {
   }, []);
 
   const fetchCartItems = () => {
-    fetch("http://localhost:5000/api/cart", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -28,7 +28,7 @@ function Payment() {
   };
 
   const fetchUserAddress = () => {
-    fetch("http://localhost:5000/api/users/profile", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/users/profile`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -76,7 +76,7 @@ function Payment() {
       })),
     };
 
-    fetch("http://localhost:5000/api/orders", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

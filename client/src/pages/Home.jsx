@@ -12,7 +12,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to load products");
         return response.json();

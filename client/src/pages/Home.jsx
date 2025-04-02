@@ -94,7 +94,10 @@ function Home() {
             </div>
           ))
         ) : (
+          <>
           <p className="text-center col-span-full text-gray-400">No products found.</p>
+          <p className="text-center col-span-full text-gray-400">Wait for a minute to active the backend server.</p>
+          </>
         )}
       </div>
     </div>
